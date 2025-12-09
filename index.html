@@ -173,7 +173,7 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-6 text-sm">
-        <form class="bg-white rounded-lg shadow p-4 space-y-3">
+        <form class="bg-white rounded-lg shadow p-4 space-y-3" onsubmit="sendMail()">
           <div>
             <label class="block text-slate-700 mb-1 text-sm" for="name">Name</label>
             <input required id="name" type="text" class="w-full border rounded px-3 py-2 text-sm" placeholder="Your name">
@@ -187,8 +187,7 @@
             <textarea required id="message" rows="4" class="w-full border rounded px-3 py-2 text-sm" placeholder="Your message"></textarea>
           </div>
           <button
-            type="button"
-            onclick="sendMail()"
+            type="submit"
             class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
             Send Message
           </button>
@@ -226,5 +225,6 @@
   </script>
 </body>
 </html>
+
 
 
