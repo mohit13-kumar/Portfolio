@@ -4,30 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohit | Web Developer</title>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "APGh_vIEHcOq1Nzs5",
-      });
-   })();
-</script>
-
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- mail sending area -->
-   <script>
-            function sendMail(){
-              let parms = {
-                  name : document.getElementById('name').value,
-                  email : document.getElementById('email').value,
-                  message : document.getElementById('message').value
-              }
-              emailjs.send("service_ll3y49d","template_wqjuzdt",parms).then(alert('email sent successfully')); 
-            }
-          </script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -291,31 +269,16 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-6 text-sm">
-        <form class="bg-white rounded-lg shadow p-4 space-y-3" onsubmit="sendMail()">
-          <div>
-            <label class="block text-slate-700 mb-1 text-sm" for="name">Name</label>
-            <input required id="name" type="text" class="w-full border rounded px-3 py-2 text-sm" placeholder="Your name">
-          </div>
-          <div>
-            <label class="block text-slate-700 mb-1 text-sm" for="email">Email</label>
-            <input required id="email" type="email" class="w-full border rounded px-3 py-2 text-sm" placeholder="you@example.com">
-          </div>
-          <div>
-            <label class="block text-slate-700 mb-1 text-sm" for="message">Message</label>
-            <textarea required id="message" rows="4" class="w-full border rounded px-3 py-2 text-sm" placeholder="Your message"></textarea>
-          </div>
-          <button
-            type="submit"
-            class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
-            Send Message
-          </button>
-
-        </form>
-
         <div class="space-y-4">
           <div class="bg-white rounded-lg shadow p-4">
             <h3 class="font-semibold mb-2">Email</h3>
             <p class="text-slate-700">kumarmohit931161@gmail.com</p>
+            <a target="_blank" href="mailto:kumarmohit931161@gmail.com">
+              <button type="submit"
+                class="bg-blue-600 text-white mt-5 px-4 py-2 rounded text-sm hover:bg-blue-700">
+                Send Message
+              </button>
+            </a>
           </div>
 
           <div class="bg-white rounded-lg shadow p-4">
@@ -375,4 +338,5 @@
   </script>
 </body>
 </html>
+
 
