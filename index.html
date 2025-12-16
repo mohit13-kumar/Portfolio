@@ -32,6 +32,20 @@
     html {
       scroll-behavior: smooth;
     }
+    .progress-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: rgb(37, 99, 235);
+      transition: width 0.2s linear;
+    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-900">
@@ -39,17 +53,48 @@
   <!-- Navbar -->
   <header class="bg-white shadow fixed top-0 left-0 w-full z-50">
     <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 class="text-lg font-bold">Mohit</h1>
-      <div class="flex gap-4 text-sm">
-        <a href="#home" class="hover:text-blue-600">Home</a>
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#skills" class="hover:text-blue-600">Skills</a>
-        <a href="#experience" class="hover:text-blue-600">Experience</a>
-        <a href="#projects" class="hover:text-blue-600">Projects</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
-      </div>
+  <h1 class="text-lg font-bold">Mohit</h1>
 
-    </nav>
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex gap-4 text-sm">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#about" class="hover:text-blue-600">About</a>
+    <a href="#skills" class="hover:text-blue-600">Skills</a>
+    <a href="#experience" class="hover:text-blue-600">Experience</a>
+    <a href="#projects" class="hover:text-blue-600">Projects</a>
+    <a href="#contact" class="hover:text-blue-600">Contact</a>
+  </div>
+
+  <!-- Hamburger Button (Mobile) -->
+  <button onclick="toggleMenu()" class="md:hidden"  id="menuBtn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow">
+  <div class="flex flex-col px-4 py-3 space-y-3 text-sm">
+    <a onclick="toggleMenu()" href="#home">Home</a>
+    <a onclick="toggleMenu()" href="#about">About</a>
+    <a onclick="toggleMenu()" href="#skills">Skills</a>
+    <a onclick="toggleMenu()" href="#experience">Experience</a>
+    <a onclick="toggleMenu()" href="#projects">Projects</a>
+    <a onclick="toggleMenu()" href="#contact">Contact</a>
+  </div>
+</div>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
   </header>
 
   <main class="max-w-5xl mx-auto px-4">
@@ -94,6 +139,7 @@
     <!-- About -->
     <section id="about" class="py-10">
       <h2 class="text-2xl font-bold mb-3">About Me</h2>
+      <div class="bg-white rounded-lg shadow p-3">
       <p class="text-sm md:text-base text-slate-700 mb-2">
         I am Mohit, a web developer who enjoys creating websites and web applications that are
         simple, user-friendly and responsive.
@@ -102,6 +148,7 @@
         I like working on both frontend and backend. I also focus on improving my problem-solving
         skills using C++, DSA and Python. I am always learning new technologies and tools.
       </p>
+      </div>
     </section>
 
     <!-- Skills -->
@@ -183,34 +230,34 @@
       <h2 class="text-2xl font-bold mb-5">Projects</h2>
       <div class="grid md:grid-cols-3 gap-6 text-sm">
         <div class="bg-white rounded-lg shadow p-4">
-          <h3 class="font-semibold mb-1 flex flex-wrap">
+          <a target="_blank" href="https://mohit13-kumar.github.io/netflix-ui-clone/"><h3 class="font-semibold mb-1 flex flex-wrap">
             <img src="assets\netflix.png" class="w-5 mr-2">
-          Netflix clone</h3>
+          Netflix clone</h3></a>
           <p class="text-slate-700">
             A simple landing page. That represent my frontend skills like html, css
           </p>
           <div>
             <h4 class="underline">Technologies</h4>
             <div class="flex flex-wrap">
-              <img class="mx-1 w-6" src="assets\HTML.png">
-              <img class="mx-1 w-6" src="assets\CSS.png">
+              <img class="mx-1 w-6" src="assets\html.png">
+              <img class="mx-1 w-6" src="assets\css.png">
             </div>
           </div>
         </div>
-
+        
         <div class="bg-white rounded-lg shadow p-4" title="you're at here">
-          <h3 class="font-semibold mb-1 flex flex-wrap">
+         <a href="#"><h3 class="font-semibold mb-1 flex flex-wrap">
             <img src="assets\portfolio.png" class="w-5 mr-2">
-          Personal Portfolio</h3>
+          Personal Portfolio</h3></a>
           <p class="text-slate-700">
             A responsive portfolio website built with HTML, Tailwind CSS and JavaScript.
           </p>
           <div>
             <h4 class="underline">Technologies</h4>
             <div class="flex">
-              <img class="mx-1 w-6" src="assets\HTML.png">
-              <img class="mx-1 w-6" src="assets\CSS.png">
-              <img class="mx-1 w-6" src="assets\JS.png">
+              <img class="mx-1 w-6" src="assets\html.png">
+              <img class="mx-1 w-6" src="assets\css.png">
+              <img class="mx-1 w-6" src="assets\js.png">
               <img class="mx-1 w-6" src="assets\tailwind.png">
             </div>
           </div>
@@ -226,9 +273,9 @@
           <div>
             <h4 class="underline">Technologies</h4>
             <div class="flex">
-              <img class="mx-1 w-6" src="assets\HTML.png">
-              <img class="mx-1 w-6" src="assets\CSS.png">
-              <img class="mx-1 w-6" src="assets\JS.png">
+              <img class="mx-1 w-6" src="assets\html.png">
+              <img class="mx-1 w-6" src="assets\css.png">
+              <img class="mx-1 w-6" src="assets\js.png">
               <img class="mx-1 w-6" src="assets\php.png">
               <img class="mx-1 w-6" src="assets\laravel.png">
             </div>
@@ -278,6 +325,14 @@
           </div>
         </div>
       </div>
+      <a href="#">
+      <div style="display: flex; justify-content: flex-end;" class="[@media(max-width:786px)_and_(max-height:378px)]:mt-6">
+        <button class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+          aria-label="Scroll to top">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+      </div></a>
     </section>
   </main>
 
@@ -293,7 +348,30 @@
   <script>
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+   
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      document.getElementById('progressBar').style.width = scrollPercent + '%';
+    });
+
+     const menu = document.getElementById("mobileMenu");
+  const menuBtn = document.getElementById("menuBtn");
+
+  function toggleMenu() {
+    menu.classList.toggle("hidden");
+  }
+
+  // Close menu when clicking anywhere outside
+  document.addEventListener("click", function (event) {
+    if (
+      !menu.contains(event.target) &&
+      !menuBtn.contains(event.target)
+    ) {
+      menu.classList.add("hidden");
+    }
+  });
   </script>
 </body>
 </html>
-
